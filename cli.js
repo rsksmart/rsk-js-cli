@@ -23,7 +23,6 @@ const icons = {
 const write = (str) => process.stdout.write(str)
 const writeLine = (...args) => { return write([].slice.call(args).join('') + '\n') }
 
-
 const remove = (lines = -1) => {
   readline.moveCursor(process.stdout, 0, lines)
   readline.clearLine(process.stdout, 0)
@@ -50,20 +49,17 @@ const randomColor = () => ansiCode(Math.floor(Math.random() * (40 - 30 + 1)) + 3
 
 const line = (char = icons.dash, len = 105) => char.repeat(len)
 
-
 const progressBar = (total, value, options = {}) => {
-  let steps = options.steps || 10
-  let char = options.char || icons.square
-  let empty = options.empty || ' '
-  let close = options.close || icons.pipe
-  let percent = Math.floor(value * 100 / total)
-  let bars = [...new Array(steps + 1)]
+  const steps = options.steps || 10
+  const char = options.char || icons.square
+  const empty = options.empty || ' '
+  const close = options.close || icons.pipe
+  const percent = Math.floor(value * 100 / total)
+  const bars = [...new Array(steps + 1)]
     .map((v, i) => (i * (100 / steps) < percent) ? char : empty)
   bars.splice(Math.floor(bars.length / 2), 0, ` ${percent}% `)
   return `${close}${bars.join('')}${close}`
 }
-
-
 
 const argKey = key => `--${key}`
 
@@ -78,19 +74,33 @@ const parseArg = (args, key) => {
   }
 }
 
-
 const getArgs = (options, userArgs) => {
   const args = {}
-  for (let o in options) {
+  for (const o in options) {
     args[o] = parseArg(userArgs, options[o])
   }
   return args
 }
 
 module.exports = {
-  reset, red, blue, green, orange, yellow, grey, ok, example,
-  log, line, write, writeLine, randomColor, ansiCode,
+  reset,
+  red,
+  blue,
+  green,
+  orange,
+  yellow,
+  grey,
+  ok,
+  example,
+  log,
+  line,
+  write,
+  writeLine,
+  randomColor,
+  ansiCode,
   progressBar,
   icons,
-  argKey, parseArg, getArgs
+  argKey,
+  parseArg,
+  getArgs
 }
