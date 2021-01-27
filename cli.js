@@ -82,6 +82,11 @@ const getArgs = (options, userArgs) => {
   return args
 }
 
+const tag = (txt, char = icons.dash) => {
+  const l = char.repeat(13)
+  return `${l} ${txt} ${l}`
+}
+
 module.exports = {
   reset,
   red,
@@ -102,5 +107,6 @@ module.exports = {
   icons,
   argKey,
   parseArg,
-  getArgs
+  getArgs,
+  tag
 }
