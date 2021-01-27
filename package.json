@@ -1,0 +1,23 @@
+{
+  "name": "@rsksmart/rsk-js-cli",
+  "version": "1.0.0",
+  "description": "Simple library to write CLI tools.",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsksmart/rsk-js-cli.git"
+  },
+  "keywords": [
+    "nodejs",
+    "cli"
+  ],
+  "author": "emi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsksmart/rsk-js-cli/issues"
+  },
+  "homepage": "https://github.com/rsksmart/rsk-js-cli#readme"
+}
